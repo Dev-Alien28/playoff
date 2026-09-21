@@ -1,17 +1,27 @@
-# PLAY//OFF Studio Web
+# PLAY//OFF Studio Web V2
+
+Application web responsive mobile + desktop.
 
 ## Local
+
+```powershell
 npm install
 npm run dev
+```
+
+## Vérifier le build
+
+```powershell
+npm run build
+```
 
 ## Vercel
-Importe ce dossier dans GitHub puis importe le repo dans Vercel. Framework preset: Vite. Build: `npm run build`. Output: `dist`.
 
-## Fonctionnement
-- Responsive ordinateur/mobile
-- Import vidéo et LRC local
-- Séquences avec hook indépendant
-- Aperçu 9:16 avec hook, paroles, logo animé et frame finale
-- Export MP4 1080x1920 via FFmpeg WebAssembly dans le navigateur
+Importe le dossier qui contient directement `package.json`, `index.html`, `src/` et `public/`.
 
-Note: l'export navigateur est gourmand en mémoire. Sur mobile, privilégier des séquences courtes. La V1 exporte le recadrage vidéo MP4; l'aperçu affiche les overlays. Pour incruster les overlays dans le MP4 final de manière robuste sur tous navigateurs, une V2 serveur de rendu est recommandée.
+- Framework Preset: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Root Directory: laisser vide si ces fichiers sont à la racine du dépôt
+
+Le fichier `vercel.json` contient déjà les réglages principaux.
