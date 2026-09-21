@@ -1,32 +1,12 @@
-# PLAY//OFF Studio Web V4
+# PLAY//OFF Overlay Studio V4.1
 
-V4 responsive Vercel, montage complet dans le navigateur.
+Un seul projet.
 
-## Nouveautés
-- Timecodes `00:50` → `01:51` (les secondes seules restent acceptées).
-- Hook 2 lignes : première blanche, seconde violette.
-- Typographie plus forte dans le hook et les paroles.
-- Les paroles LRC utilisent les timecodes absolus de la vidéo source, puis l'extrait est découpé, pour conserver la synchro.
-- Logo PLAY//OFF intégré au MP4 et légèrement animé jusqu'à la phase finale.
-- Image finale intégrée sur les 2,7 dernières secondes.
-- Export H.264 CRF 17, preset medium, AAC 256 kb/s pour réduire la perte de qualité.
-- Erreurs de rendu plus explicites.
-
-## Vercel
-Framework: Vite
-Build: npm run build
-Output: dist
-
-## Local
+```powershell
 npm install
 npm run dev
+```
 
-Note : FFmpeg WebAssembly peut être limité par la mémoire sur mobile pour les vidéos longues. Le rendu reste entièrement local au navigateur.
+Puis ouvre http://localhost:5173
 
-
-## V5
-- Calage LRC ajustable de -2000 à +2000 ms
-- Safe-zone TikTok renforcée pour textes et logo
-- Logo central agrandi pendant la phase finale
-- Scaling Lanczos + H.264 CRF 14
-- Progression FFmpeg et estimation dynamique du temps restant
+Le cadre transparent original ProRes 4444 est utilisé directement par FFmpeg pour l’export. La preview navigateur utilise une copie VP9 avec alpha.
