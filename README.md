@@ -22,3 +22,11 @@ npm install
 npm run dev
 
 Note : FFmpeg WebAssembly peut être limité par la mémoire sur mobile pour les vidéos longues. Le rendu reste entièrement local au navigateur.
+
+
+## V5
+- Calage LRC ajustable de -2000 à +2000 ms
+- Safe-zone TikTok renforcée pour textes et logo
+- Logo central agrandi pendant la phase finale
+- Scaling Lanczos + H.264 CRF 14
+- Progression FFmpeg et estimation dynamique du temps restant
