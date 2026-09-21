@@ -1,27 +1,24 @@
-# PLAY//OFF Studio Web V2
+# PLAY//OFF Studio Web V4
 
-Application web responsive mobile + desktop.
+V4 responsive Vercel, montage complet dans le navigateur.
 
-## Local
-
-```powershell
-npm install
-npm run dev
-```
-
-## Vérifier le build
-
-```powershell
-npm run build
-```
+## Nouveautés
+- Timecodes `00:50` → `01:51` (les secondes seules restent acceptées).
+- Hook 2 lignes : première blanche, seconde violette.
+- Typographie plus forte dans le hook et les paroles.
+- Les paroles LRC utilisent les timecodes absolus de la vidéo source, puis l'extrait est découpé, pour conserver la synchro.
+- Logo PLAY//OFF intégré au MP4 et légèrement animé jusqu'à la phase finale.
+- Image finale intégrée sur les 2,7 dernières secondes.
+- Export H.264 CRF 17, preset medium, AAC 256 kb/s pour réduire la perte de qualité.
+- Erreurs de rendu plus explicites.
 
 ## Vercel
+Framework: Vite
+Build: npm run build
+Output: dist
 
-Importe le dossier qui contient directement `package.json`, `index.html`, `src/` et `public/`.
+## Local
+npm install
+npm run dev
 
-- Framework Preset: Vite
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Root Directory: laisser vide si ces fichiers sont à la racine du dépôt
-
-Le fichier `vercel.json` contient déjà les réglages principaux.
+Note : FFmpeg WebAssembly peut être limité par la mémoire sur mobile pour les vidéos longues. Le rendu reste entièrement local au navigateur.
